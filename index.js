@@ -1,7 +1,7 @@
-var React = require('react')
+var Preact = require('preact')
 var ReactDOM = require('react-dom')
 
-Component.prototype = Object.create(React.Component.prototype)
+Component.prototype = Object.create(Preact.Component.prototype)
 
 function withReact (state, emitter, app) {
   app._mount = (tree, newTree) => ReactDOM.render(newTree, tree)
@@ -13,7 +13,7 @@ function withReact (state, emitter, app) {
 }
 
 function Component (props) {
-  React.Component.call(this, props)
+  Preact.Component.call(this, props)
 }
 
 module.exports = withReact
